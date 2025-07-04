@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://k1yr5xvfvp1a"]
+
+[ext_resource type="Script" uid="uid://qk0m0kjtoe1u" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvxuhrnd0ej88" path="res://node_2d.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 1280.0
+offset_bottom = 80.0
+min_value = 5.0
+max_value = 2000.0
+step = 5.0
+value = 5.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 8.0
+offset_right = 664.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 30
+text = "Começar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -392.0
+offset_top = 40.0
+offset_right = -312.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Button"]
+layout_mode = 0
+offset_left = 296.0
+offset_right = 560.0
+offset_bottom = 48.0
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "Aleatorio Crescente"
+popup/item_0/id = 0
+popup/item_1/text = "Crescente"
+popup/item_1/id = 1
+popup/item_2/text = "Decrescente"
+popup/item_2/id = 2
+popup/item_3/text = "Aleatorio Completo"
+popup/item_3/id = 3
+popup/item_4/text = "Exponencial"
+popup/item_4/id = 4
+
+[node name="Label3" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 408.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1280.0
+offset_top = 8.0
+offset_right = 1360.0
+offset_bottom = 40.0
+
+[node name="Node2D" parent="." instance=ExtResource("2_h2yge")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
